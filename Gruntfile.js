@@ -56,19 +56,6 @@ module.exports = function(grunt) {
             all: ['Gruntfile.js', 'src/*.js', 'test/*.js']
         },
 
-        mochaTest: {
-            test: {
-                options: {
-                    reporter: 'spec',
-                    captureFile: 'test/results.txt',
-                    quiet: false,
-                    clearRequireCache: false,
-                    noFail: false
-                },
-                src: ['test/**/*.js']
-            }
-        },
-
         babel: {
             options: {
                 sourceMap: true,
@@ -84,7 +71,10 @@ module.exports = function(grunt) {
         haml: {
             dist: {
                 files: {
-                    'index-haml.html': 'index.haml'
+                    'app/views/layouts/index-haml.html': 'app/views/layouts/index.haml',
+                    'app/views/layouts/sign-up-haml.html': 'app/views/layouts/sign-up.haml',
+                    'app/views/layouts/registration.html': 'app/views/layouts/registration.haml',
+                    'app/views/layouts/game.html': 'app/views/layouts/game.haml'
                 }
             }
         },
@@ -99,7 +89,7 @@ module.exports = function(grunt) {
                 files: [
                     'src/js/**/*', 'test/*.js'
                 ],
-                tasks: ['mochaTest', 'jshint', 'concat', 'uglify']
+                tasks: ['jshint', 'concat', 'uglify']
             },
 
             img: {
@@ -108,7 +98,7 @@ module.exports = function(grunt) {
             },
 
             html: {
-              files: ['index.haml'],
+              files: ['app/views/layouts/index.haml', 'app/views/layouts/sign-up.haml', 'app/views/layouts/game.haml', 'app/views/layouts/registration.haml'],
               tasks: ['haml']
             }
         }
@@ -120,7 +110,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-haml2html');
     grunt.registerTask('default', [
@@ -130,7 +119,6 @@ module.exports = function(grunt) {
         'concat',
         'uglify',
         'jshint',
-        'mochaTest',
         'babel',
         'haml'
     ]);
