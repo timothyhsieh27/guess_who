@@ -3,8 +3,17 @@
   %head
     %meta(charset='UTF-8')
     %meta(content="width=device-width, initial-scale=1" name="viewport")
-    %title Vikings in Haml
+    %title Mr. Potato Who?
     %link(rel='stylsheet' href='lib/styles/main.min.css')
   %body
-
-  
+    .container
+      %header
+        %nav
+      .form-container
+        %form
+          %label{:for => "username"} Username:
+          %input#username{:name => "username", :type => "text"}
+          %label{:for => "password"} Create Password:
+          %input#password{:name => "password", :type => "password"}
+          %label{:for => "password"} Re-enter Password:
+          %input#password{:name => "password", :type => "password"}
