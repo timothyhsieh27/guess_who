@@ -98,7 +98,7 @@ module.exports = function(grunt) {
             },
 
             html: {
-              files: ['app/views/layouts/index.haml', 'app/views/layouts/sign-up.haml', 'app/views/layouts/game.haml', 'app/views/layouts/registration.haml'],
+              files: ['app/views/layouts/*.haml'],
               tasks: ['haml']
             }
         }
