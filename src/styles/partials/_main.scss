@@ -1,0 +1,32 @@
+.board {
+  width: 500px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    padding: 20px 0;
+    font-family: 'Luckiest Guy', cursive;
+  }
+
+  .potatoBoard {
+    border: #ddd solid 10px;
+    border-radius: 50%;
+    padding: 30px 0;
+    width: 390px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: #FFF;
+
+      img {
+        width: 400px;
+        transform: rotate(100deg);
+        position: relative;
+        z-index: -1;
+        bottom: -70px;
+        left: -14px;
+      }
+  }
+}
