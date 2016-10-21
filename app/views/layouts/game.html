@@ -3,8 +3,55 @@
   <head>
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <title>Vikings in Haml</title>
-    <link href='lib/styles/main.min.css' rel='stylsheet'>
+    <title>Mr. Potato Who?</title>
+    <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
-  <body></body>
+  <body>
+    <div class='container'>
+      <header>
+        <nav>
+          <div class='totalPoints'>
+            <div class='points'></div>
+          </div>
+          <div class='logo'></div>
+          <div class='profile'>
+            <div class='picture'></div>
+            <div class='name'></div>
+          </div>
+        </nav>
+        <aside class='potatoPeople'></aside>
+        <main class='board'>
+          <h1>Mr. Potato Who?</h1>
+          <div class='potatoBoard'>
+            <img alt='potato-board' src='images/potato.png'>
+          </div>
+        </main>
+        <aside class='score'></aside>
+        <div class='props-container'>
+          <div class='prop-container'>
+            <div class='prop'>
+              <img alt='' src='../../../images/hat.svg'>
+            </div>
+            <div class='prop'>
+              <img alt='' src='../../../images/mustache.svg'>
+            </div>
+            <div class='prop'>
+              <img alt='' src='../../../images/hat.svg'>
+            </div>
+            <div class='prop'>
+              <img alt='' src='../../../images/glasses-for-eyes.svg'>
+            </div>
+            <div class='prop'>
+              <img alt='' src='../../../images/hat.svg'>
+            </div>
+            <div class='prop'>
+              <img alt='' src='../../../images/hat.svg'>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <script src='/app/assets/javascripts/vendor.min.js'></script>
+    <script src='/app/assets/javascripts/app.js'></script>
+  </body>
 </html>
