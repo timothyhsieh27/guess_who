@@ -3,8 +3,33 @@
   %head
     %meta(charset='UTF-8')
     %meta(content="width=device-width, initial-scale=1" name="viewport")
-    %title Vikings in Haml
+    %title Mr. Potato Who?
     %link(rel='stylsheet' href='lib/styles/main.min.css')
   %body
-
-  
+    - profilePic = [{img: 'one.svg', name: 'one.svg'}, {img: 'two.svg', name: 'one.svg'},
+      {img: 'three.svg', name: 'one.svg'}, {img: 'four.svg', name: 'one.svg'}]
+    .container
+      %header
+        %nav
+      .form-container
+        %form
+          -# First Name
+          %label{:for => "firstName"} First Name:
+          %input#firstName{:name => "firstName", :type => "text"}
+          -# Last Name
+          %label{:for => "lastName"} Last Name:
+          %input#lastName{:name => "lastName", :type => "text"}
+          -# Username
+          %label{:for => "username"} Username:
+          %input#username{:name => "username", :type => "text"}
+          -# Password
+          %label{:for => "password"} Create Password:
+          %input#password{:name => "password", :type => "password"}
+          -# Confirm Password
+          %label{:for => "password"} Re-enter Password:
+          %input#password{:name => "password", :type => "password"}
+          -# Picture
+          %select
+            - (profilePic).each do |pic|
+              %option
+                %img(src='../../../images/#{pic[:img]}' alt='#{pic[:name]}')
