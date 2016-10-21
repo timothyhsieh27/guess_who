@@ -4,23 +4,21 @@
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <title>Mr. Potato Who?</title>
-    <link href='lib/styles/main.min.css' rel='stylesheet'>
+    <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
   <body>
     <div id='container'>
-      <form>
+      <form action='post'>
         <label for='username'>Username:</label>
         <input id='username' name='username' type='text'>
         <label for='password'>Password:</label>
         <input id='password' name='password' type='password'>
-      </form>
-      <div id='lower'>
         <p id='signup'>
           New User?
-          <a href='sign-up.haml'>Sign Up!</a>
+          <a href='signup.haml'>Sign Up!</a>
         </p>
         <input id='login' type='submit' value='Login'>
-      </div>
+      </form>
     </div>
   </body>
   <script src='/app/assets/javascripts/vendor.min.js'></script>

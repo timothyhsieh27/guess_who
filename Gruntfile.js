@@ -7,10 +7,12 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'app/assets/stylesheets/application.css': 'src/styles/main.scss'
+                    'app/assets/stylesheets/main.min.css': 'src/styles/main.scss'
                 }
             }
         },
+
+
 
         imagemin: {
             dynamic: {
@@ -58,13 +60,13 @@ module.exports = function(grunt) {
 
         watch: {
             css: {
-                files: ['app/assets/stylesheets/**/*'],
+                files: ['src/styles/**/*'],
                 tasks: ['sass']
             },
 
             javascript: {
                 files: [
-                    'src/js/**/*', 'test/*.js'
+                    'app/assets/javascripts/js/**/*', 'test/*.js'
                 ],
                 tasks: ['jshint', 'concat', 'uglify']
             },
