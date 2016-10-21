@@ -1,0 +1,14 @@
+.props-container {
+  padding: 10px 20px;
+  overflow: hidden;
+
+  .prop {
+    float: left;
+    width: 33%;
+    text-align: center;
+
+    img {
+      width: 150px;
+    }
+  }
+}

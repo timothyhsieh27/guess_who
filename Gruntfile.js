@@ -7,31 +7,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'lib/styles/main.min.css': 'src/styles/main.scss'
-                }
-            }
-        },
-
-        uglify: {
-            options: {
-                preserveComments: false
-            },
-            my_target: {
-                files: {
-                    'lib/js/app.min.js': ['lib/js/app.js'],
-                    'lib/js/vendor.min.js': ['lib/js/vendor.js']
-                }
-            }
-        },
-
-        concat: {
-            options: {
-                separator: ';'
-            },
-            dist: {
-                files: {
-                    'lib/js/app.js': ['src/js/*.js'],
-                    'lib/js/vendor.js': ['src/js/vendor/*.js']
+                    'app/assets/stylesheets/application.css': 'src/styles/main.scss'
                 }
             }
         },
@@ -82,7 +58,7 @@ module.exports = function(grunt) {
 
         watch: {
             css: {
-                files: ['src/styles/**/*'],
+                files: ['app/assets/stylesheets/**/*'],
                 tasks: ['sass']
             },
 
