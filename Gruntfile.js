@@ -74,6 +74,7 @@ module.exports = function(grunt) {
                     'app/views/layouts/index-haml.html': 'app/views/layouts/index.haml',
                     'app/views/layouts/sign-up-haml.html': 'app/views/layouts/sign-up.haml',
                     'app/views/layouts/registration.html': 'app/views/layouts/registration.haml',
+                    'app/views/layouts/dev.html': 'app/views/layouts/dev.haml',
                     'app/views/layouts/game.html': 'app/views/layouts/game.haml'
                 }
             }
