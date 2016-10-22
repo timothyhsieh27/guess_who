@@ -4,17 +4,24 @@
     %meta(charset='UTF-8')
     %meta(content='width=device-width, initial-scale=1' name='viewport')
     %title Mr. Potato Who?
+    %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
     %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
   %body
-    #container
-      %form(action="post")
-        %label{:for => "username"} Username:
-        %input#username{:name => "username", :type => "text"}
-        %label{:for => "password"} Password:
-        %input#password{:name => "password", :type => "password"}
-        %p#signup
+    .container
+      %header
+        %nav
+          %h1 Mr. Potato Who?
+      .form-container
+        .login-logo
+          %img(src='/app/assets/images/logo.svg' alt='logo')
+        %form{:method=>"post"}
+          %label{:for => "username"} Username:
+          %input#username{:name => "username", :type => "text"}
+          %label{:for => "password"} Password:
+          %input#password{:name => "password", :type => "password"}
+          %p#signup
           New User?
           %a{:href => "signup.haml"} Sign Up!
-        %input#login{:type => "submit", :value => "Login"}
+          %input#login{:type => "submit", :value => "Login"}
   %script(src='/app/assets/javascripts/vendor.min.js')
   %script(src='/app/assets/javascripts/app.js')

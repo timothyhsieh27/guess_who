@@ -1,0 +1,42 @@
+nav {
+  .totalPoints {
+    float: left;
+    width: 150px;
+
+    .total {
+      float: left;
+    }
+
+    span {
+      float: right;
+      background: darkgrey;
+      width: 53px;
+      height: 53px;
+      border-radius: 50%;
+    }
+  }
+
+  .profile {
+    width: 150px;
+    float: right;
+
+    .picture {
+      width: 53px;
+      float: left;
+      background: darkgray;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 50px;
+        position: relative;
+        left: 2px;
+        top: 5px;
+      }
+    }
+
+    .name {
+      float: right;
+    }
+  }
+}

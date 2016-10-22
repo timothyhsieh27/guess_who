@@ -4,6 +4,9 @@
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <title>Mr. Potato Who?</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js' type='text/javascript'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js' type='text/javascript'></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy' rel='stylesheet'>
     <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
   <body>
@@ -11,45 +14,142 @@
       <header>
         <nav>
           <div class='totalPoints'>
+            <div class='total'>Total Points:</div>
+            <span>1200</span>
             <div class='points'></div>
           </div>
           <div class='logo'></div>
           <div class='profile'>
-            <div class='picture'></div>
-            <div class='name'></div>
+            <div class='picture'>
+              <img alt='John' src='/app/assets/images/person.svg'>
+            </div>
+            <div class='name'>Hey, John</div>
           </div>
         </nav>
-        <aside class='potatoPeople'></aside>
-        <main class='board'>
-          <h1>Mr. Potato Who?</h1>
-          <div class='potatoBoard'>
-            <img alt='potato-board' src='images/potato.png'>
+      </header>
+      <aside class='potatoPeople'>
+        <div class='potato-people-container'>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
+            </div>
           </div>
-        </main>
-        <aside class='score'></aside>
-        <div class='props-container'>
-          <div class='prop-container'>
-            <div class='prop'>
-              <img alt='' src='../../../images/hat.svg'>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
-            <div class='prop'>
-              <img alt='' src='../../../images/mustache.svg'>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
-            <div class='prop'>
-              <img alt='' src='../../../images/hat.svg'>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
-            <div class='prop'>
-              <img alt='' src='../../../images/glasses-for-eyes.svg'>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
-            <div class='prop'>
-              <img alt='' src='../../../images/hat.svg'>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
-            <div class='prop'>
-              <img alt='' src='../../../images/hat.svg'>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
+            </div>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
+            </div>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
+            </div>
+          </div>
+          <div class='person-container'>
+            <h3>Baked Ben</h3>
+            <div class='props'>
+              <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
             </div>
           </div>
         </div>
-      </header>
+      </aside>
+      <aside class='score'></aside>
+      <main class='board'>
+        <h1>Mr. Potato Who?</h1>
+        <div class='potatoBoard'>
+          <img alt='potato-board' src='/app/assets/images/potato.png'>
+        </div>
+      </main>
+      <div class='props-container'>
+        <div class='prop-container'>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/hat.svg'>
+          </div>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/mustache.svg'>
+          </div>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/bow-tie.svg'>
+          </div>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/glasses.svg'>
+          </div>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/tattoo.svg'>
+          </div>
+          <div class='prop'>
+            <img alt='' class='drag' src='/app/assets/images/fork.svg'>
+          </div>
+        </div>
+      </div>
     </div>
     <script src='/app/assets/javascripts/vendor.min.js'></script>
     <script src='/app/assets/javascripts/app.js'></script>

@@ -1,0 +1,47 @@
+.container {
+  background-image: url('/app/assets/images/pattern.png');
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  align-items: center;
+  padding: 20px 0;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.form-container {
+  background: #ddd;
+  margin: 0 auto;
+  height: 400px;
+  width: 30%;
+  border: 1px solid $brown;
+}
+
+.login-logo {
+  align-items: center;
+  width: 100px;
+}
+
+img{
+  width: 95px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid $blue ;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: $red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

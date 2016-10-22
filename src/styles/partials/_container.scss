@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+  background: url('/app/assets/images/pattern.png');
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+
+  header {
+    padding: 10px 30px;
+    background: #ddd;
+    overflow: hidden;
+  }
+}
