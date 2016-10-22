@@ -19,11 +19,12 @@
             .total Total Points:
             %span 1300
             .points
-          .logo
           .profile
             .picture
               %img(src='/app/assets/images/person.svg' alt='John')
             .name Hey, John
+          .logo
+            %img(src='/app/assets/images/logo.svg' alt='logo')
       %main.leadership-board
         - (topPeople).each_with_index do |person, index|
           .leadership-person{:id => "#{index}"}

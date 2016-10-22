@@ -1,11 +1,38 @@
-/**************************************
-Click to pages
-**************************************/
-('.profile').onclick(function() {
-  console.log('in');
-  location.href = "leadership.html";
-});
 
+(function($) {
+
+  /**************************************
+  Mr. Potato Who Game
+  **************************************/
+  function PotatoGame() {
+    console.log(this);
+    this.pageNav();
+  }
+
+  /**************************************
+  Click to Pages
+  **************************************/
+  PotatoGame.prototype.pageNav = function() {
+
+    this.leaderboard = function() {
+      $('.leaderpage').on('click', function() {
+        location.href = "leaderboard.html";
+      });
+    };
+    this.leaderboard();
+
+    this.game = function() {
+      $('.logo').on('click', function() {
+        location.href = "game.html";
+      });
+    };
+    this.game();
+
+  };
+
+  new PotatoGame();
+
+})(jQuery);
 // $('#login').submit(function(event) {
 //   event.preventDefault();
 //   new User(loginValues());
@@ -31,6 +58,32 @@ Click to pages
 //             }
 //         });
 // }
+
+$('#login').submit(function(event) {
+  event.preventDefault();
+  // new User(loginValues());
+  loginValues();
+});
+
+function loginValues() {
+       var context = {
+           username: $('#username').val(),
+           password: $('#password').val(),
+       };
+       return context;
+   }
+
+   function checkUsers(context) {
+    $.ajax({
+        "method": "GET",
+        "url": '/login' + context,
+        "data": {},
+        "datatype": "json",
+        "success": function(data) {
+
+            }
+        });
+}
 //
 //    function User(context) {
 //      this.info = {
@@ -64,15 +117,62 @@ Click to pages
 //
 //
 //
-// //make items draggable
-// $('.items').draggable({
-//       containment: '#content',  //only allows dragged item to be within #content container
+//make items draggable
+$('.drag').draggable({
+      containment: '#content',  //only allows dragged item to be within #content container
+      snap: true,
+    } );
+
+//make potato droppable, hot potato
+$('.potatoboard').droppable({
+     accept: '.drag',
+     hoverClass: 'hovered',  //optional
+     drop: handleItemDrop    // function called once item is dropped
+});
+
+function handleItemDrop(event, ui) {
+  ui.draggable.draggable( 'disable' );
+   $(this).droppable( 'disable' );
+
+
+}
+//
+//   }
+// $('#login').submit(function(event) {
+//   event.preventDefault();
+//   console.log(hey);
+//   //loginValues();
+//
+// });
+
+// function loginValues() {
+//        var context = {
+//            username: $('#username').val(),
+//            password: $('#password').val(),
+//        };
+//        checkUsers(context);
+//        console.log(context);
+//    }
+//
+// function checkUsers(context) {
+//     $.ajax({
+//         "method": "GET",
+//         "url": '/login + context',
+//         "data": {},
+//         "datatype": "json",
+//         "success": function(data) {
+//           console.log(data);
+//             }
+//         });
+
+// function init() {
+//  $('.drag').draggable( {
 //       snap: true,
-//     } );
+//     });
 //
 // //make potato droppable, hot potato
-// $('#potato').droppable({
-//      accept: '.items',
+// $('#potatoBoard').droppable({
+//      accept: '.drag',
 //      hoverClass: 'hovered',  //optional
 //      drop: handleItemDrop    // function called once item is dropped
 // });
@@ -80,8 +180,10 @@ Click to pages
 // function handleItemDrop(event, ui) {
 //   ui.draggable.draggable( 'disable' );
 //    $(this).droppable( 'disable' );
-//
-//
 // }
-//
-//   }
+// }
+
+function init() {
+  console.log("hey");
+}
+ init();
