@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 $('#login').submit(function(event) {
   event.preventDefault();
   // new User(loginValues());
@@ -12,19 +13,9 @@ function loginValues() {
        };
        return context;
    }
-
-   function checkUsers(context) {
-    $.ajax({
-        "method": "GET",
-        "url": '/login' + context,
-        "data": {},
-        "datatype": "json",
-        "success": function(data) {
-
-            }
-        });
-}
 =======
+>>>>>>> 9c72b6351177442ba07a20b7f52b4fc0bf19128d
+
 (function($) {
 
   /**************************************
@@ -84,7 +75,36 @@ function loginValues() {
 //             }
 //         });
 // }
+<<<<<<< HEAD
 >>>>>>> 73294ada5ce04505fa6fac2b4ff56d7ca0844b66
+=======
+
+$('#login').submit(function(event) {
+  event.preventDefault();
+  // new User(loginValues());
+  loginValues();
+});
+
+function loginValues() {
+       var context = {
+           username: $('#username').val(),
+           password: $('#password').val(),
+       };
+       return context;
+   }
+
+   function checkUsers(context) {
+    $.ajax({
+        "method": "GET",
+        "url": '/login' + context,
+        "data": {},
+        "datatype": "json",
+        "success": function(data) {
+
+            }
+        });
+}
+>>>>>>> 9c72b6351177442ba07a20b7f52b4fc0bf19128d
 //
 //    function User(context) {
 //      this.info = {
