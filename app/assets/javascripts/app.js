@@ -1,110 +1,113 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 $('#login').submit(function(event) {
-  event.preventDefault();
-  // new User(loginValues());
-  loginValues();
+    event.preventDefault();
+    // new User(loginValues());
+    loginValues();
 });
 
 function loginValues() {
-       var context = {
-           username: $('#username').val(),
-           password: $('#password').val(),
-       };
-       return context;
-   }
-=======
->>>>>>> 9c72b6351177442ba07a20b7f52b4fc0bf19128d
-
-(function($) {
-
-  /**************************************
-  Mr. Potato Who Game
-  **************************************/
-  function PotatoGame() {
-    console.log(this);
-    this.pageNav();
-  }
-
-  /**************************************
-  Click to Pages
-  **************************************/
-  PotatoGame.prototype.pageNav = function() {
-
-    this.leaderboard = function() {
-      $('.leaderpage').on('click', function() {
-        location.href = "leaderboard.html";
-      });
+    var context = {
+        username: $('#username').val(),
+        password: $('#password').val(),
     };
-    this.leaderboard();
+    return context;
+}
 
-    this.game = function() {
-      $('.logo').on('click', function() {
-        location.href = "game.html";
-      });
-    };
-    this.game();
-
-  };
-
-  new PotatoGame();
-
-})(jQuery);
-// $('#login').submit(function(event) {
-//   event.preventDefault();
-//   new User(loginValues());
-//   checkUsers();
-// });
-//
-// function loginValues() {
-//        var context = {
-//            username: $('#username').val(),
-//            password: $('#password').val(),
-//        };
-//        return context;
-//    }
-//
-//    function checkUsers(response) {
-//     $.ajax({
-//         "method": "GET",
-//         "url": 'https:' + response,
-//         "data": {},
-//         "datatype": "json",
-//         "success": function(data) {
-//
-//             }
-//         });
-// }
-<<<<<<< HEAD
->>>>>>> 73294ada5ce04505fa6fac2b4ff56d7ca0844b66
-=======
-
-$('#login').submit(function(event) {
-  event.preventDefault();
-  // new User(loginValues());
-  loginValues();
-});
-
-function loginValues() {
-       var context = {
-           username: $('#username').val(),
-           password: $('#password').val(),
-       };
-       return context;
-   }
-
-   function checkUsers(context) {
+function checkExisting(context) {
     $.ajax({
         "method": "GET",
-        "url": '/login' + context,
+        "url": '/login/users' + context,
         "data": {},
         "datatype": "json",
         "success": function(data) {
-
+            for (var index = 0; index.length; index++) {
+                if (data.username == context.username)
+                    if (data.password == context.password) {
+                        window.location.replace("/instructions");
+                    } else {
+                        window.location.replace("/login");
+                    }
             }
-        });
+
+        }
+    });
 }
->>>>>>> 9c72b6351177442ba07a20b7f52b4fc0bf19128d
+
+function UserData(userObj) {
+    this.info = {
+        username: userObj.username,
+        password: userObj.password,
+        totalpoints: userObj.total_points,
+
+    };
+}
+
+$('#signup').submit(function(event) {
+    event.preventDefault();
+    // new User(loginValues());
+    signUpValues();
+});
+
+function signUpValues() {
+    var newContext = {
+        username: $('#username').val(),
+        password: $('#password').val(),
+        confirm: $('#confirm').val()
+    };
+    if (this.newContext.password === this.newcontext.confirm) {
+        checkUsername(newContext);
+    } else {
+        alert("Passwords do not match");
+    }
+
+}
+
+function checkUsername(newContext) {
+  $.ajax({
+    "method": "GET",
+    "url": '/login/users',
+    "data": {},
+    "datatype": "json",
+    "success": function(data) {
+      for (var index = 0; index.length; index++) {
+        if (data.username == newContext.username) {
+            alert("Username already exists");
+        } else {
+            postUser(newContext);
+        }
+          }
+        }
+    });
+}
+
+function postUser(newContext) {
+  $.ajax({
+    "method": "POST",
+    "url": '/login/users',
+    "data": {},
+    "datatype": "json",
+    "success": function(data) {
+         window.location.replace('/instructions');
+        }
+    });
+}
+
+function update() {
+  $.ajax({
+      "method": "GET",
+      "url": '/login/users' + context,
+      "data": {},
+      "datatype": "json",
+      "success": function(data) {
+          for (var index = 0; index.length; index++) {
+          }
+        }  
+  });
+}
+
+
+
+
+
 //
 //    function User(context) {
 //      this.info = {
@@ -140,51 +143,23 @@ function loginValues() {
 //
 //make items draggable
 $('.drag').draggable({
-      containment: '#content',  //only allows dragged item to be within #content container
-      snap: true,
-    } );
+    containment: '#content', //only allows dragged item to be within #content container
+    snap: true,
+});
 
 //make potato droppable, hot potato
 $('.potatoboard').droppable({
-     accept: '.drag',
-     hoverClass: 'hovered',  //optional
-     drop: handleItemDrop    // function called once item is dropped
+    accept: '.drag',
+    hoverClass: 'hovered', //optional
+    drop: handleItemDrop // function called once item is dropped
 });
 
 function handleItemDrop(event, ui) {
-  ui.draggable.draggable( 'disable' );
-   $(this).droppable( 'disable' );
+    ui.draggable.draggable('disable');
+    $(this).droppable('disable');
 
 
 }
-//
-//   }
-// $('#login').submit(function(event) {
-//   event.preventDefault();
-//   console.log(hey);
-//   //loginValues();
-//
-// });
-
-// function loginValues() {
-//        var context = {
-//            username: $('#username').val(),
-//            password: $('#password').val(),
-//        };
-//        checkUsers(context);
-//        console.log(context);
-//    }
-//
-// function checkUsers(context) {
-//     $.ajax({
-//         "method": "GET",
-//         "url": '/login + context',
-//         "data": {},
-//         "datatype": "json",
-//         "success": function(data) {
-//           console.log(data);
-//             }
-//         });
 
 // function init() {
 //  $('.drag').draggable( {
@@ -203,8 +178,3 @@ function handleItemDrop(event, ui) {
 //    $(this).droppable( 'disable' );
 // }
 // }
-
-function init() {
-  console.log("hey");
-}
- init();
