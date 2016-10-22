@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
-  def index
-  end
-
-  def signup
-  end
 
   def game
   end
 
-  def leaderboards
+  def index
   end
 
-  def createuser
-    @user = User.new
+  def leaderboard
+  end
+
+  def signup
   end
 
 end
