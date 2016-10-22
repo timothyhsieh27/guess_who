@@ -19,13 +19,11 @@
             .total Total Points:
             %span 1300
             .points
+          .logo
           .profile
             .picture
               %img(src='/assets/person.svg' alt='John')
             .name Hey, John
-            .leaderpage Leader Board?
-          .logo
-            %img(src='/assets/logo.svg' alt='logo')
       %main.leadership-board
         - (topPeople).each_with_index do |person, index|
           .leadership-person{:id => "#{index}"}
@@ -36,5 +34,5 @@
               .placement # #{index}
               .total Total Points:
               %span #{person[:total]}
-  =javascript_include_tag 'vendor.min.js'
-  =javascript_include_tag 'app.js'
+    =javascript_include_tag 'vendor.min.js'
+    =javascript_include_tag 'app.js'
