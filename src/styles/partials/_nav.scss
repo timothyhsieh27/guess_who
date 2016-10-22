@@ -1,18 +1,23 @@
 nav {
   .totalPoints {
     float: left;
-    width: 150px;
+    width: 167px;
 
     .total {
       float: left;
+      font-size: 18px;
+      padding-top: 15px;
+      color: #fff;
     }
 
     span {
       float: right;
-      background: darkgrey;
+      background: #ddd;
       width: 53px;
       height: 53px;
       border-radius: 50%;
+      padding-top: 17px;
+      padding-left: 8px;
     }
   }
 
@@ -37,6 +42,9 @@ nav {
 
     .name {
       float: right;
+      padding-top: 15px;
+      font-size: 18px;
+      color: #fff;
     }
   }
 }

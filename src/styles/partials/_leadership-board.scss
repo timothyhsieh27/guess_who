@@ -1,0 +1,96 @@
+.leadership-board {
+  padding: 40px;
+  overflow: hidden;
+
+  .leadership-person {
+    width: 33%;
+    float: left;
+    padding: 20px;
+
+    .person-info {
+      width: 50%;
+      float: left;
+      text-align: center;
+      background: #ddd;
+      padding: 5px;
+      border-radius: 10px;
+
+      h1 {
+        padding-bottom: 12px;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow: ellipsis;
+      }
+
+      img {
+        width: 85px;
+      }
+    }
+
+    .person-stats {
+      width: 50%;
+      float: right;
+      text-align: center;
+
+      .placement {
+        font-size: 40px;
+        font-weight: 100;
+        padding: 15px 0;
+        color: #D94032;
+      }
+    }
+  }
+
+  [id="0"] {
+    width: 100%;
+    background: #12253E;;
+    position: relative;
+    border-radius: 10px;
+
+    .person-info {
+      background: none;
+      text-align: right;
+      color: #fff;
+
+      h1 {
+        float: none;
+        display: inline-block;
+        font-size: 36px;
+        padding-bottom: 25px;
+      }
+
+      img {
+        float: none;
+        display: inline-block;
+      }
+    }
+
+    .person-stats {
+      text-align: right;
+      padding-top: 25px;
+      padding-right: 35px;
+      color: #fff;
+
+      .placement {
+        position: absolute;
+        left: 57px;
+        top: 15px;
+        font-size: 70px;
+        font-weight: 100;
+        letter-spacing: -4px;
+        color: #fff;
+      }
+
+      .total {
+        display: inline-block;
+        font-size: 30px;
+        padding-right: 15px;
+      }
+
+      span {
+        display: inline-block;
+        font-size: 40px;
+      }
+    }
+  }
+}

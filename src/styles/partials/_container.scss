@@ -3,10 +3,12 @@
   background: url('/app/assets/images/pattern.png');
   height: 100%;
   font-family: 'Lato', sans-serif;
+  overflow: auto;
+  box-sizing: border-box;
 
   header {
     padding: 10px 30px;
-    background: #ddd;
+    background: #204471;
     overflow: hidden;
   }
 }
