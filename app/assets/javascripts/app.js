@@ -1,11 +1,37 @@
-/**************************************
-Click to pages
-**************************************/
-('.profile').onclick(function() {
-  console.log('in');
-  location.href = "leadership.html";
-});
+(function($) {
 
+  /**************************************
+  Mr. Potato Who Game
+  **************************************/
+  function PotatoGame() {
+    console.log(this);
+    this.pageNav();
+  }
+
+  /**************************************
+  Click to Pages
+  **************************************/
+  PotatoGame.prototype.pageNav = function() {
+
+    this.leaderboard = function() {
+      $('.leaderpage').on('click', function() {
+        location.href = "leaderboard.html";
+      });
+    };
+    this.leaderboard();
+
+    this.game = function() {
+      $('.logo').on('click', function() {
+        location.href = "game.html";
+      });
+    };
+    this.game();
+
+  };
+
+  new PotatoGame();
+
+})(jQuery);
 // $('#login').submit(function(event) {
 //   event.preventDefault();
 //   new User(loginValues());

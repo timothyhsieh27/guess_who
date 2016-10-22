@@ -12,11 +12,11 @@
         {name: 'Brotato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
         {name: 'Mike Mash', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
         {name: 'Nancy Yam', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Mertato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Popo', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
+        {name: 'Darth Tator', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Ted Tubor', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Spud Lighter', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Fran Fry', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Potato.', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
 
     - props = [{prop: 'hat', img: 'hat.svg'}, {prop: 'mustache', img: 'mustache.svg'},
         {prop: 'bow-tie', img: 'bow-tie.svg'}, {prop: 'glasses', img: 'glasses.svg'},
@@ -31,11 +31,13 @@
             .total Total Points:
             %span 1200
             .points
-          .logo
           .profile
             .picture
               %img(src='/app/assets/images/person.svg' alt='John')
             .name Hey, John
+            .leaderpage Leader Board?
+          .logo
+            %img(src='/app/assets/images/logo.svg' alt='logo')
       %aside.potatoPeople
         .potato-people-container
           - (potatoes).each do |person|

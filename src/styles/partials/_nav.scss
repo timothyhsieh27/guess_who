@@ -21,9 +21,44 @@ nav {
     }
   }
 
+  .logo {
+
+    img {
+      width: 80px;
+      display: block;
+      padding-top: 3px;
+      margin: 0 auto;
+    }
+  }
+
   .profile {
     width: 150px;
     float: right;
+
+    &:hover {
+      .leaderpage {
+        display: block;
+        //transition: display 1s ease 2s;
+      }
+
+      .name {
+        padding-top: 2px;
+        transition: all .5s ease;
+      }
+
+      .picture {
+        margin-left: -10px;
+        transition: all .5s ease;
+      }
+    }
+
+    .name {
+      transition: .5s ease-out;
+    }
+
+    .picture {
+      transition: .5s ease-out;
+    }
 
     .picture {
       width: 53px;
@@ -45,6 +80,17 @@ nav {
       padding-top: 15px;
       font-size: 18px;
       color: #fff;
+    }
+
+    .leaderpage {
+      display: none;
+      position: relative;
+      bottom: -15px;
+      right: -7px;
+      padding-top: 5px;
+      color: #fff;
+      cursor: pointer;
+      width: 150px;
     }
   }
 }
