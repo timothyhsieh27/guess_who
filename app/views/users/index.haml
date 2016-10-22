@@ -1,0 +1,21 @@
+!!! 5
+%html(lang='en')
+  %head
+    %meta(charset='UTF-8')
+    %meta(content='width=device-width, initial-scale=1' name='viewport')
+    %title Mr. Potato Who?
+    =stylesheet_link_tag "application.css"
+  %body
+    #container
+      %form
+        %label{:for => "username"} Username:
+        %input#username{:name => "username", :type => "text"}
+        %label{:for => "password"} Password:
+        %input#password{:name => "password", :type => "password"}
+      #lower
+        %p#signup
+          New User?
+          %a{:href => "sign-up.haml"} Sign Up!
+        %input#login{:type => "submit", :value => "Login"}
+  =javascript_include_tag "vendor.min.js"
+  =javascript_include_tag "app.js"
