@@ -10,5 +10,9 @@ class UsersController < ApplicationController
 
   def leaderboards
   end
-  
+
+  def createuser
+    @user = User.new
+  end
+
 end

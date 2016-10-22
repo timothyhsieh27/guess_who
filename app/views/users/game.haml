@@ -4,38 +4,61 @@
     %meta(charset='UTF-8')
     %meta(content="width=device-width, initial-scale=1" name="viewport")
     %title Mr. Potato Who?
-    =stylesheet_link_tag "application.css"
+    %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
+    =stylesheet_link_tag 'application.css'
   %body
     - potatoes = [{name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Tator Tom', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Brotato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Mike Mash', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Nancy Yam', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Mertato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
         {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Popo', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
         {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
         {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
 
     - props = [{prop: 'hat', img: 'hat.svg'}, {prop: 'mustache', img: 'mustache.svg'},
-        {prop: 'bow-tie', img: 'hat.svg'}, {prop: 'glasses', img: 'glasses-for-eyes.svg'},
-        {prop: 'tattoo', img: 'hat.svg'}, {prop: 'butter', img: 'hat.svg'}]
+        {prop: 'bow-tie', img: 'bow-tie.svg'}, {prop: 'glasses', img: 'glasses.svg'},
+        {prop: 'tattoo', img: 'tattoo.svg'}, {prop: 'fork', img: 'fork.svg'}]
+
+    - tries = [{try: 'Try 1'}, {try: 'Try 2'}, {try: 'Try 3'}]
+
     .container
       %header
         %nav
           .totalPoints
+            .total Total Points:
+            %span 1200
             .points
           .logo
           .profile
             .picture
-            .name
-        %aside.potatoPeople
-        %main.board
-          %h1 Mr. Potato Who?
-          .potatoBoard
-          %img(src='assets/potato.png' alt='potato-board')
-        %aside.score
-        .props-container
-          .prop-container
-            - (props).each do |prop|
-              .prop
-                -#=image_tag "{prop[:img]}"
-                -#%img(src='../../../images/#{prop[:img]}' alt='#{prop[:name]}')
-                %img(src='assets/#{prop[:img]}' alt='#{prop[:name]}')
-  =javascript_include_tag "vendor.min.js"
-  =javascript_include_tag "app.js"
+              %img(src='/assets/person.svg' alt='John')
+            .name Hey, John
+      %aside.potatoPeople
+        .potato-people-container
+          - (potatoes).each do |person|
+            .person-container
+              %h3 #{person[:name]}
+              .props
+                - (person[:props]).each do |prop|
+                  %img(src='/assets/#{prop}.svg' alt='#{person[:name]}')
+      %aside.score
+        - (tries).each do |try|
+          .try-container
+            %h3 #{try[:try]}
+      %main.board
+        %h1 Mr. Potato Who?
+        .potatoBoard
+          .bodyFeatures
+            %img.eyes(src='/assets/eyes.svg' alt='potato-eyes')
+            %img.nose(src='/assets/big-nose.svg' alt='potato-nose')
+          %img.board(src='/assets/potato.png' alt='potato-board')
+      .props-container
+        .prop-container
+          - (props).each do |prop|
+            .prop
+              %img(src='/assets/#{prop[:img]}' alt='#{prop[:name]}')
+    =javascript_include_tag 'vendor.min.js'
+    =javascript_include_tag 'app.js'
