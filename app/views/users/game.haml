@@ -1,0 +1,41 @@
+!!! 5
+%html(lang='en')
+  %head
+    %meta(charset='UTF-8')
+    %meta(content="width=device-width, initial-scale=1" name="viewport")
+    %title Mr. Potato Who?
+    =stylesheet_link_tag "application.css"
+  %body
+    - potatoes = [{name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
+
+    - props = [{prop: 'hat', img: 'hat.svg'}, {prop: 'mustache', img: 'mustache.svg'},
+        {prop: 'bow-tie', img: 'hat.svg'}, {prop: 'glasses', img: 'glasses-for-eyes.svg'},
+        {prop: 'tattoo', img: 'hat.svg'}, {prop: 'butter', img: 'hat.svg'}]
+    .container
+      %header
+        %nav
+          .totalPoints
+            .points
+          .logo
+          .profile
+            .picture
+            .name
+        %aside.potatoPeople
+        %main.board
+          %h1 Mr. Potato Who?
+          .potatoBoard
+          %img(src='assets/potato.png' alt='potato-board')
+        %aside.score
+        .props-container
+          .prop-container
+            - (props).each do |prop|
+              .prop
+                -#=image_tag "{prop[:img]}"
+                -#%img(src='../../../images/#{prop[:img]}' alt='#{prop[:name]}')
+                %img(src='assets/#{prop[:img]}' alt='#{prop[:name]}')
+  =javascript_include_tag "vendor.min.js"
+  =javascript_include_tag "app.js"
