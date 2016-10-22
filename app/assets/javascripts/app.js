@@ -1,3 +1,11 @@
+/**************************************
+Click to pages
+**************************************/
+('.profile').onclick(function() {
+  console.log('in');
+  location.href = "leadership.html";
+});
+
 // $('#login').submit(function(event) {
 //   event.preventDefault();
 //   new User(loginValues());

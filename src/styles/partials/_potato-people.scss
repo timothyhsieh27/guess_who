@@ -1,0 +1,38 @@
+.potatoPeople {
+  overflow: hidden;
+  width: 190px;
+  float: left;
+  padding-top: 20px;
+
+  .person-container {
+    width: 50%;
+    float: left;
+    background: #fff;
+    padding: 12px;
+    height: 90px;
+    border-right: #204471 solid 2px;
+    border-bottom: #204471 solid 2px;
+    text-align: center;
+
+    &:nth-child(1) {
+      border-top: #204471 solid 2px;
+    }
+
+    &:nth-child(2) {
+      border-top: #204471 solid 2px;
+    }
+
+    h3 {
+      font-size: 14px;
+    }
+
+  .props {
+
+    img {
+      width: 50%;
+      float: left;
+      padding: 0 5px;
+    }
+  }
+  }
+}

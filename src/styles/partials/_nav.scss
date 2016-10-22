@@ -1,0 +1,50 @@
+nav {
+  .totalPoints {
+    float: left;
+    width: 167px;
+
+    .total {
+      float: left;
+      font-size: 18px;
+      padding-top: 15px;
+      color: #fff;
+    }
+
+    span {
+      float: right;
+      background: #ddd;
+      width: 53px;
+      height: 53px;
+      border-radius: 50%;
+      padding-top: 17px;
+      padding-left: 8px;
+    }
+  }
+
+  .profile {
+    width: 150px;
+    float: right;
+
+    .picture {
+      width: 53px;
+      float: left;
+      background: darkgray;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 50px;
+        position: relative;
+        left: 2px;
+        top: 5px;
+      }
+    }
+
+    .name {
+      float: right;
+      padding-top: 15px;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+}
