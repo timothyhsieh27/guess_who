@@ -11,6 +11,12 @@
     width: 16%;
     text-align: center;
 
+    &:hover {
+      img {
+        animation: rock 1s ease;
+      }
+    }
+
     img {
       width: 90px;
 

@@ -9,19 +9,22 @@
     %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
   %body
     - potatoes = [{name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
+        {name: 'Tator Tom', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Brotato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Mike Mash', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Nancy Yam', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Darth Tator', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Ted Tubor', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Spud Lighter', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Fran Fry', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Potato.', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
 
     - props = [{prop: 'hat', img: 'hat.svg'}, {prop: 'mustache', img: 'mustache.svg'},
         {prop: 'bow-tie', img: 'bow-tie.svg'}, {prop: 'glasses', img: 'glasses.svg'},
         {prop: 'tattoo', img: 'tattoo.svg'}, {prop: 'fork', img: 'fork.svg'}]
+
+    - tries = [{try: 'Try 1'}, {try: 'Try 2'}, {try: 'Try 3'}]
+
     .container
       %header
         %nav
@@ -29,11 +32,13 @@
             .total Total Points:
             %span 1200
             .points
-          .logo
           .profile
             .picture
               %img(src='/app/assets/images/person.svg' alt='John')
             .name Hey, John
+            .leaderpage Leader Board?
+          .logo
+            %img(src='/app/assets/images/logo.svg' alt='logo')
       %aside.potatoPeople
         .potato-people-container
           - (potatoes).each do |person|
@@ -43,10 +48,16 @@
                 - (person[:props]).each do |prop|
                   %img(src='/app/assets/images/#{prop}.svg' alt='#{person[:name]}')
       %aside.score
+        - (tries).each do |try|
+          .try-container
+            %h3 #{try[:try]}
       %main.board
         %h1 Mr. Potato Who?
         .potatoBoard
-          %img(src='/app/assets/images/potato.png' alt='potato-board')
+          .bodyFeatures
+            %img.eyes(src='/app/assets/images/eyes.svg' alt='potato-eyes')
+            %img.nose(src='/app/assets/images/big-nose.svg' alt='potato-nose')
+          %img.board(src='/app/assets/images/potato.png' alt='potato-board')
       .props-container
         .prop-container
           - (props).each do |prop|

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'app/assets/stylesheets/main.min.css': 'src/styles/main.scss'
+                    'app/assets/stylesheets/application.css': 'src/styles/main.scss'
                 }
             }
         },
@@ -50,9 +50,9 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'app/views/layouts/index-haml.html': 'app/views/layouts/index.haml',
-                    'app/views/layouts/sign-up-haml.html': 'app/views/layouts/sign-up.haml',
                     'app/views/layouts/registration.html': 'app/views/layouts/registration.haml',
                     'app/views/layouts/dev.html': 'app/views/layouts/dev.haml',
+                    'app/views/layouts/leaderboard.html': 'app/views/layouts/leaderboard.haml',
                     'app/views/layouts/game.html': 'app/views/layouts/game.haml'
                 }
             }

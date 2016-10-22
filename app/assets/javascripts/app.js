@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $('#login').submit(function(event) {
   event.preventDefault();
   // new User(loginValues());
@@ -23,6 +24,67 @@ function loginValues() {
             }
         });
 }
+=======
+(function($) {
+
+  /**************************************
+  Mr. Potato Who Game
+  **************************************/
+  function PotatoGame() {
+    console.log(this);
+    this.pageNav();
+  }
+
+  /**************************************
+  Click to Pages
+  **************************************/
+  PotatoGame.prototype.pageNav = function() {
+
+    this.leaderboard = function() {
+      $('.leaderpage').on('click', function() {
+        location.href = "leaderboard.html";
+      });
+    };
+    this.leaderboard();
+
+    this.game = function() {
+      $('.logo').on('click', function() {
+        location.href = "game.html";
+      });
+    };
+    this.game();
+
+  };
+
+  new PotatoGame();
+
+})(jQuery);
+// $('#login').submit(function(event) {
+//   event.preventDefault();
+//   new User(loginValues());
+//   checkUsers();
+// });
+//
+// function loginValues() {
+//        var context = {
+//            username: $('#username').val(),
+//            password: $('#password').val(),
+//        };
+//        return context;
+//    }
+//
+//    function checkUsers(response) {
+//     $.ajax({
+//         "method": "GET",
+//         "url": 'https:' + response,
+//         "data": {},
+//         "datatype": "json",
+//         "success": function(data) {
+//
+//             }
+//         });
+// }
+>>>>>>> 73294ada5ce04505fa6fac2b4ff56d7ca0844b66
 //
 //    function User(context) {
 //      this.info = {
