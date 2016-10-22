@@ -5,6 +5,7 @@
     %meta(content="width=device-width, initial-scale=1" name="viewport")
     %title Mr. Potato Who?
     %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
+    %link(rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css")
     %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
   %body
     - potatoes = [{name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
@@ -61,6 +62,8 @@
         .prop-container
           - (props).each do |prop|
             .prop
-              %img(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
+              %img.drag(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
+    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
+    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js")
     %script(src='/app/assets/javascripts/vendor.min.js')
     %script(src='/app/assets/javascripts/app.js')

@@ -3,23 +3,31 @@
   <head>
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
-    <title>Guess Who!</title>
-    <link href='lib/styles/main.min.css' rel='stylesheet'>
+    <title>Mr. Potato Who?</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy' rel='stylesheet'>
+    <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
   <body>
-    <div id='container'>
-      <form>
-        <label for='username'>Username:</label>
-        <input id='username' name='username' type='text'>
-        <label for='password'>Password:</label>
-        <input id='password' name='password' type='password'>
-      </form>
-      <div id='lower'>
-        <p id='signup'>
+    <div class='container'>
+      <header>
+        <nav>
+          <h1>Mr. Potato Who?</h1>
+        </nav>
+      </header>
+      <div class='form-container'>
+        <div class='login-logo'>
+          <img alt='logo' src='/app/assets/images/logo.svg'>
+        </div>
+        <form method='post'>
+          <label for='username'>Username:</label>
+          <input id='username' name='username' type='text'>
+          <label for='password'>Password:</label>
+          <input id='password' name='password' type='password'>
+          <p id='signup'></p>
           New User?
-          <a href='sign-up.haml'>Sign Up!</a>
-        </p>
-        <input id='login' type='submit' value='Login'>
+          <a href='signup.haml'>Sign Up!</a>
+          <input id='login' type='submit' value='Login'>
+        </form>
       </div>
     </div>
   </body>
