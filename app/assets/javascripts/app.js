@@ -1,9 +1,24 @@
-$('#login').submit(function(event) {
+//On pageload instructions pop up
+$(function(){
+  $('#game-instructions').hide().fadeIn(2500);
+  $('#flying-pot').hide();
+});
+//make them go away
+$('#close').click(function(){
+  $('#game-instructions').fadeOut().hide(2000);
+});
+//Login/Signup listeners
+$('#login').click(function(event) {
     event.preventDefault();
     // new User(loginValues());
     loginValues();
 });
 
+$('#signup').click(function(event) {
+    event.preventDefault();
+    signUpValues();
+});
+//object to pass into ajax
 function loginValues() {
     var context = {
         username: $('#username').val(),
@@ -11,7 +26,7 @@ function loginValues() {
     };
     return context;
 }
-
+//GETs user database and iterates over it
 function checkExisting(context) {
     $.ajax({
         "method": "GET",
@@ -22,7 +37,7 @@ function checkExisting(context) {
             for (var index = 0; index.length; index++) {
                 if (data.username == context.username)
                     if (data.password == context.password) {
-                        window.location.replace("/instructions");
+                        window.location.replace("/game");
                     } else {
                         window.location.replace("/login");
                     }
@@ -31,7 +46,7 @@ function checkExisting(context) {
         }
     });
 }
-
+//Random constructor, Make use of me
 function UserData(userObj) {
     this.info = {
         username: userObj.username,
@@ -41,11 +56,6 @@ function UserData(userObj) {
     };
 }
 
-$('#signup').submit(function(event) {
-    event.preventDefault();
-    // new User(loginValues());
-    signUpValues();
-});
 
 function signUpValues() {
     var newContext = {
@@ -53,7 +63,7 @@ function signUpValues() {
         password: $('#password').val(),
         confirm: $('#confirm').val()
     };
-    if (this.newContext.password === this.newcontext.confirm) {
+    if (newContext.password === newContext.confirm) {
         checkUsername(newContext);
     } else {
         alert("Passwords do not match");
@@ -86,7 +96,7 @@ function postUser(newContext) {
     "data": {},
     "datatype": "json",
     "success": function(data) {
-         window.location.replace('/instructions');
+         window.location.replace('/login');
         }
     });
 }
@@ -100,9 +110,23 @@ function update() {
       "success": function(data) {
           for (var index = 0; index.length; index++) {
           }
-        }  
+        }
   });
 }
+//Flying Tater. Why? Not sure...
+var tater = function($tater,speed){
+    $tater.animate({
+        "left": "90%",
+        "top": "100%"
+    }, speed);
+};
+$('.login-logo').click(function() {
+  goodTimes();
+});
+function goodTimes(){
+    tater($("#flying-pot").show(), 5000);
+}
+
 
 
 
@@ -141,26 +165,6 @@ function update() {
 //
 //
 //
-//make items draggable
-$('.drag').draggable({
-    containment: '#content', //only allows dragged item to be within #content container
-    snap: true,
-});
-
-//make potato droppable, hot potato
-$('.potatoboard').droppable({
-    accept: '.drag',
-    hoverClass: 'hovered', //optional
-    drop: handleItemDrop // function called once item is dropped
-});
-
-function handleItemDrop(event, ui) {
-    ui.draggable.draggable('disable');
-    $(this).droppable('disable');
-
-
-}
-
 // function init() {
 //  $('.drag').draggable( {
 //       snap: true,

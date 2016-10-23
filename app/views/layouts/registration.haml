@@ -2,32 +2,34 @@
 %html(lang='en')
   %head
     %meta(charset='UTF-8')
-    %meta(content="width=device-width, initial-scale=1" name="viewport")
+    %meta(content='width=device-width, initial-scale=1' name='viewport')
     %title Mr. Potato Who?
-    %link(rel='stylsheet' href='lib/styles/main.min.css')
+    %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
+    %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
   %body
-    - profilePic = [{img: 'one.svg', name: 'one.svg'}, {img: 'two.svg', name: 'one.svg'},
-      {img: 'three.svg', name: 'one.svg'}, {img: 'four.svg', name: 'one.svg'}]
-    .container
+    -# - profilePic = [{img: 'person.svg', name: 'one.svg'}, {img: 'happy.svg', name: 'one.svg'}]
+    #reg-container
       %header
         %nav
           %h1 Mr. Potato Who?
-      .form-container
+      #flying-pot
+        %img(src="/app/assets/images/potato.png")
+      #reg-form
+        .login-logo
+          %img(src='/app/assets/images/logo.svg' alt='logo')
         %form{:method=>"post", :action=>"#"}
           -# Username
-          %label{:for => "username"} Username:
+          %label{:for => "username"} Create Username:
           %input#username{:name => "username", :type => "text"}
           -# Password
           %label{:for => "password"} Create Password:
           %input#password{:name => "password", :type => "password"}
           -# Confirm Password
           %label{:for => "password"} Re-enter Password:
-          %input#password{:name => "password", :type => "password"}
+          %input#confirm{:name => "confirm", :type => "password"}
           -# Picture
           %input#signup{:type => "submit", :value => "Login"}
-          %select
-            - (profilePic).each do |pic|
-              %option
-                %img(src='../../../images/#{pic[:img]}' alt='#{pic[:name]}')
+            -# - (profilePic).each do |pic|
+            -#   %img(src='/app/assets/images/#{pic[:img]}' alt='#{pic[:name]}')
   %script(src='/app/assets/javascripts/vendor.min.js')
   %script(src='/app/assets/javascripts/app.js')

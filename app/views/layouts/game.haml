@@ -4,6 +4,8 @@
     %meta(charset='UTF-8')
     %meta(content="width=device-width, initial-scale=1" name="viewport")
     %title Mr. Potato Who?
+    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
+    %script(src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js")
     %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
     %link(rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css")
     %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
@@ -53,6 +55,9 @@
             %h3 #{try[:try]}
       %main.board
         %h1 Mr. Potato Who?
+        #game-instructions
+          #close X
+          %h4 You have 3 tries to guess who's the secret potato. Pick an item bellow to help narrow your choices. Feel free to guess by clicking on a tater!
         .potatoBoard
           .bodyFeatures
             %img.eyes(src='/app/assets/images/eyes.svg' alt='potato-eyes')
@@ -63,7 +68,5 @@
           - (props).each do |prop|
             .prop
               %img.drag(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js")
     %script(src='/app/assets/javascripts/vendor.min.js')
     %script(src='/app/assets/javascripts/app.js')
