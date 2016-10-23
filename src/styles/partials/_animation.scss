@@ -11,3 +11,13 @@
       transform: rotate(-10deg);
   }
 }
+
+@include keyframes(upAndDown) {
+  50% {
+    @include transform(translateY(-4px));
+    box-shadow: 0 8px 6px -6px #ddd;
+  }
+  to {
+    @include transform(translateY(0px));
+  }
+}

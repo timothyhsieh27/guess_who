@@ -12,12 +12,13 @@ nav {
 
     span {
       float: right;
-      background: #ddd;
+      background: #497DBD;
       width: 53px;
       height: 53px;
       border-radius: 50%;
       padding-top: 17px;
       padding-left: 8px;
+      color: #fff;
     }
   }
 
@@ -28,6 +29,10 @@ nav {
       display: block;
       padding-top: 3px;
       margin: 0 auto;
+
+      &:hover {
+        @include animation(rock .5s infinite);
+      }
     }
   }
 
@@ -63,7 +68,7 @@ nav {
     .picture {
       width: 53px;
       float: left;
-      background: darkgray;
+      background: #497DBD;
       border-radius: 50%;
       overflow: hidden;
 

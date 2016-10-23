@@ -13,13 +13,53 @@
   .potatoBoard {
     border: #ddd solid 10px;
     border-radius: 50%;
-    padding: 30px 0;
-    width: 390px;
+    padding: 45px 0;
+    width: 400px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     z-index: 1;
     background: #FFF;
+
+      .propFeatures {
+        .glasses, .bow-tie, .hat, .tattoo, .fork, .mustache {
+          position: absolute;
+          display: none;
+        }
+        .glasses {
+          width: 220px;
+          left: 78px;
+          top: 102px;
+          z-index: 1;
+        }
+        .hat {
+          width: 380px;
+          top: -160px;
+          left: -3px;
+        }
+        .mustache {
+          width: 150px;
+          bottom: -19px;
+          left: 113px;
+        }
+        .tattoo {
+          left: 57px;
+          top: 121px;
+          transform: rotate(-50deg);
+          width: 75px;
+          opacity: .5;
+        }
+        .fork {
+          width: 235px;
+          right: -115px;
+          top: 55px;
+        }
+        .bow-tie {
+          bottom: -69px;
+          left: 113px;
+          width: 150px;
+        }
+      }
 
       .bodyFeatures {
         img {
@@ -27,9 +67,9 @@
         }
 
         .nose {
-          bottom: 50px;
-          right: 129px;
-          width: 105px;
+          bottom: 63px;
+          right: 144px;
+          width: 95px;
         }
 
         .eyes {
@@ -39,12 +79,12 @@
         }
       }
       .board {
-        width: 400px;
+        width: 380px;
         transform: rotate(100deg);
         position: relative;
         z-index: -1;
-        bottom: -70px;
-        left: -14px;
+        bottom: -45px;
+        left: 0px;
       }
   }
 }

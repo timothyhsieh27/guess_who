@@ -19,10 +19,10 @@
 
     img {
       width: 90px;
+      @include animation(upAndDown 2.0s infinite);
 
       &:hover {
         bottom: 4px;
-        width:94px;
       }
     }
   }

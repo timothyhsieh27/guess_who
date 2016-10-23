@@ -5,8 +5,8 @@
   Mr. Potato Who Game
   **************************************/
   function PotatoGame() {
-    console.log(this);
     this.pageNav();
+    this.potatoBoard();
   }
 
   /**************************************
@@ -30,7 +30,31 @@
 
   };
 
+  /**************************************
+  When users click on prop, it will appear on potato
+  **************************************/
+  PotatoGame.prototype.potatoBoard = function() {
+    $('.prop').on('click', 'img', function() {
+      var image = $(this).attr("src");
+
+      if(image === '/app/assets/images/glasses.svg') {
+        $('.propFeatures .glasses').show();
+      } else if(image === '/app/assets/images/hat.svg') {
+        $('.propFeatures .hat').show();
+      } else if(image === '/app/assets/images/bow-tie.svg') {
+        $('.propFeatures .bow-tie').show();
+      } else if(image === '/app/assets/images/mustache.svg') {
+        $('.propFeatures .mustache').show();
+      } else if(image === '/app/assets/images/tattoo.svg') {
+        $('.propFeatures .tattoo').show();
+      } else if(image === '/app/assets/images/fork.svg') {
+        $('.propFeatures .fork').show();
+      }
+    });
+  };
+
   new PotatoGame();
+
 
 })(jQuery);
 // $('#login').submit(function(event) {
@@ -83,7 +107,25 @@ function loginValues() {
 
             }
         });
+
 }
+
+// //make items draggable
+// $('.drag').draggable({
+//       snap: true
+//     } );
+
+// //make potato droppable, hot potato
+// $('.potatoboard').droppable({
+//      accept: '.drag',
+//      drop: handleItemDrop()    // function called once item is dropped
+// });
+//
+// function handleItemDrop(event, ui) {
+//   ui.draggable.draggable( 'disable' );
+//   $(this).droppable( 'disable' );
+// }
+
 //
 //    function User(context) {
 //      this.info = {
@@ -117,25 +159,7 @@ function loginValues() {
 //
 //
 //
-//make items draggable
-$('.drag').draggable({
-      containment: '#content',  //only allows dragged item to be within #content container
-      snap: true,
-    } );
 
-//make potato droppable, hot potato
-$('.potatoboard').droppable({
-     accept: '.drag',
-     hoverClass: 'hovered',  //optional
-     drop: handleItemDrop    // function called once item is dropped
-});
-
-function handleItemDrop(event, ui) {
-  ui.draggable.draggable( 'disable' );
-   $(this).droppable( 'disable' );
-
-
-}
 //
 //   }
 // $('#login').submit(function(event) {
@@ -182,8 +206,3 @@ function handleItemDrop(event, ui) {
 //    $(this).droppable( 'disable' );
 // }
 // }
-
-function init() {
-  console.log("hey");
-}
- init();
