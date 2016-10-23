@@ -33,7 +33,7 @@
             .points
           .profile
             .picture
-              %img(src='/app/assets/images/person-batman.svg' alt='John')
+              %img(src='/app/assets/images/person.svg' alt='John')
             .name Hey, John
             .leaderpage Leader Board?
           .logo
@@ -56,13 +56,6 @@
           #close X
           %h4 You have 3 tries to guess who's the secret potato. Pick an item bellow to help narrow your choices. Feel free to guess by clicking on a tater!
         .potatoBoard
-          .propFeatures
-            %img.glasses(src='/app/assets/images/glasses.svg' alt='glasses')
-            %img.hat(src='/app/assets/images/hat.svg' alt='hat')
-            %img.bow-tie(src='/app/assets/images/bow-tie.svg' alt='bow-tie')
-            %img.mustache(src='/app/assets/images/mustache.svg' alt='mustache')
-            %img.tattoo(src='/app/assets/images/tattoo.svg' alt='tattoo')
-            %img.fork(src='/app/assets/images/fork.svg' alt='fork')
           .bodyFeatures
             %img.eyes(src='/app/assets/images/eyes.svg' alt='potato-eyes')
             %img.nose(src='/app/assets/images/big-nose.svg' alt='potato-nose')
@@ -70,8 +63,7 @@
       .props-container
         .prop-container
           - (props).each do |prop|
-            .prop{:class => "#{prop[:name]}"}
-              %img(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
-    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
+            .prop
+              %img.drag(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
     %script(src='/app/assets/javascripts/vendor.min.js')
     %script(src='/app/assets/javascripts/app.js')
