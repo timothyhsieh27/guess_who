@@ -4,38 +4,32 @@
     <meta charset='UTF-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <title>Mr. Potato Who?</title>
-    <link href='lib/styles/main.min.css' rel='stylsheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy' rel='stylesheet'>
+    <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
   <body>
-    <div class='container'>
+    <div id='reg-container'>
       <header>
         <nav>
           <h1>Mr. Potato Who?</h1>
         </nav>
       </header>
-      <div class='form-container'>
+      <div id='flying-pot'>
+        <img src='/app/assets/images/potato.png'>
+      </div>
+      <div id='reg-form'>
+        <div class='login-logo'>
+          <img alt='logo' src='/app/assets/images/logo.svg'>
+        </div>
         <form action='#' method='post'>
-          <label for='username'>Username:</label>
+          <label for='username'>Create Username:</label>
           <input id='username' name='username' type='text'>
           <label for='password'>Create Password:</label>
           <input id='password' name='password' type='password'>
           <label for='password'>Re-enter Password:</label>
-          <input id='password' name='password' type='password'>
+          <input id='confirm' name='confirm' type='password'>
           <input id='signup' type='submit' value='Login'>
-          <select>
-            <option>
-              <img alt='one.svg' src='../../../images/one.svg'>
-            </option>
-            <option>
-              <img alt='one.svg' src='../../../images/two.svg'>
-            </option>
-            <option>
-              <img alt='one.svg' src='../../../images/three.svg'>
-            </option>
-            <option>
-              <img alt='one.svg' src='../../../images/four.svg'>
-            </option>
-          </select>
+          </input>
         </form>
       </div>
     </div>

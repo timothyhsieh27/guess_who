@@ -10,6 +10,31 @@
     font-family: 'Luckiest Guy', cursive;
   }
 
+  #game-instructions {
+    z-index: 4;
+    width: 50%;
+    margin: 0 auto;
+    border: 3px solid $blue;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+
+    #close {
+      float: right;
+      width: 5%;
+      color: $red;
+      border: 2px solid $red;
+      border-radius: 50%;
+      padding: 3px;
+      margin: 3px;
+      font-size: 20px;
+      transition:  .7s ease-out;
+      &:hover {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
   .potatoBoard {
     border: #ddd solid 10px;
     border-radius: 50%;

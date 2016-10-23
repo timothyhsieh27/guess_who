@@ -8,13 +8,16 @@
     <link href='/app/assets/stylesheets/application.css' rel='stylesheet'>
   </head>
   <body>
-    <div class='container'>
+    <div class='index-container'>
       <header>
         <nav>
           <h1>Mr. Potato Who?</h1>
         </nav>
       </header>
-      <div class='form-container'>
+      <div id='flying-pot'>
+        <img src='/app/assets/images/potato.png'>
+      </div>
+      <div id='form-container'>
         <div class='login-logo'>
           <img alt='logo' src='/app/assets/images/logo.svg'>
         </div>
@@ -25,7 +28,7 @@
           <input id='password' name='password' type='password'>
           <p id='signup'></p>
           New User?
-          <a href='signup.haml'>Sign Up!</a>
+          <a href='registration.html'>Sign Up!</a>
           <input id='login' type='submit' value='Login'>
         </form>
       </div>
