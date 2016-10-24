@@ -7,16 +7,16 @@
     %link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Luckiest+Guy')
     %link(rel='stylesheet' href='/app/assets/stylesheets/application.css')
   %body
-    - potatoes = [{name: 'Baked Ben', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Tator Tom', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Brotato', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
+    - potatoes = [{name: 'Baked Ben', props: ['hat', 'glasses', 'Tattoo', 'fork']},
+        {name: 'Tator Tom', props: ['hat', 'mustache', 'glasses', 'tattoo']},
+        {name: 'Brotato', props: ['hat', 'mustache', 'tattoo', 'bow-tie']},
         {name: 'Mike Mash', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Nancy Yam', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Darth Tator', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Ted Tubor', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Spud Lighter', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Fran Fry', props: ['hat', 'mustache', 'glasses', 'bow-tie']},
-        {name: 'Potato.', props: ['hat', 'mustache', 'glasses', 'bow-tie']}]
+        {name: 'Nancy Yam', props: ['hat', 'tattoo', 'glasses', 'bow-tie']},
+        {name: 'Darth Tator', props: ['tattoo', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Ted Tubor', props: ['hat', 'mustache', 'glasses', 'tattoo']},
+        {name: 'Spud Lighter', props: ['hat', 'mustache', 'fork', 'bow-tie']},
+        {name: 'Fran Fry', props: ['fork', 'mustache', 'glasses', 'bow-tie']},
+        {name: 'Potato.', props: ['hat', 'mustache', 'glasses', 'fork']}]
 
     - props = [{prop: 'hat', img: 'hat.svg'}, {prop: 'mustache', img: 'mustache.svg'},
         {prop: 'bow-tie', img: 'bow-tie.svg'}, {prop: 'glasses', img: 'glasses.svg'},
@@ -33,7 +33,7 @@
             .points
           .profile
             .picture
-              %img(src='/app/assets/images/person.svg' alt='John')
+              %img(src='/app/assets/images/person-batman.svg' alt='John')
             .name Hey, John
             .leaderpage Leader Board?
           .logo
@@ -47,15 +47,24 @@
                 - (person[:props]).each do |prop|
                   %img(src='/app/assets/images/#{prop}.svg' alt='#{person[:name]}')
       %aside.score
-        - (tries).each do |try|
+        - (tries).each_with_index do |try, index|
           .try-container
-            %h3 #{try[:try]}
+            %h3{:id => "#{index}"} #{try[:try]}
       %main.board
         %h1 Mr. Potato Who?
         #game-instructions
           #close X
           %h4 You have 3 tries to guess who's the secret potato. Pick an item bellow to help narrow your choices. Feel free to guess by clicking on a tater!
+        #choose-tater
+          %h4 You're out of guesses! So, who's the secret tater?
         .potatoBoard
+          .propFeatures
+            %img.glasses(src='/app/assets/images/glasses.svg' alt='glasses')
+            %img.hat(src='/app/assets/images/hat.svg' alt='hat')
+            %img.bow-tie(src='/app/assets/images/bow-tie.svg' alt='bow-tie')
+            %img.mustache(src='/app/assets/images/mustache.svg' alt='mustache')
+            %img.tattoo(src='/app/assets/images/tattoo.svg' alt='tattoo')
+            %img.fork(src='/app/assets/images/fork.svg' alt='fork')
           .bodyFeatures
             %img.eyes(src='/app/assets/images/eyes.svg' alt='potato-eyes')
             %img.nose(src='/app/assets/images/big-nose.svg' alt='potato-nose')
@@ -63,7 +72,8 @@
       .props-container
         .prop-container
           - (props).each do |prop|
-            .prop
-              %img.drag(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
+            .prop{:id => "#{prop[:prop]}"}
+              %img(src='/app/assets/images/#{prop[:img]}' alt='#{prop[:name]}')
+    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js")
     %script(src='/app/assets/javascripts/vendor.min.js')
     %script(src='/app/assets/javascripts/app.js')

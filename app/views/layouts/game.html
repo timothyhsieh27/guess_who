@@ -18,7 +18,7 @@
           </div>
           <div class='profile'>
             <div class='picture'>
-              <img alt='John' src='/app/assets/images/person.svg'>
+              <img alt='John' src='/app/assets/images/person-batman.svg'>
             </div>
             <div class='name'>Hey, John</div>
             <div class='leaderpage'>Leader Board?</div>
@@ -34,9 +34,9 @@
             <h3>Baked Ben</h3>
             <div class='props'>
               <img alt='Baked Ben' src='/app/assets/images/hat.svg'>
-              <img alt='Baked Ben' src='/app/assets/images/mustache.svg'>
               <img alt='Baked Ben' src='/app/assets/images/glasses.svg'>
-              <img alt='Baked Ben' src='/app/assets/images/bow-tie.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/Tattoo.svg'>
+              <img alt='Baked Ben' src='/app/assets/images/fork.svg'>
             </div>
           </div>
           <div class='person-container'>
@@ -45,7 +45,7 @@
               <img alt='Tator Tom' src='/app/assets/images/hat.svg'>
               <img alt='Tator Tom' src='/app/assets/images/mustache.svg'>
               <img alt='Tator Tom' src='/app/assets/images/glasses.svg'>
-              <img alt='Tator Tom' src='/app/assets/images/bow-tie.svg'>
+              <img alt='Tator Tom' src='/app/assets/images/tattoo.svg'>
             </div>
           </div>
           <div class='person-container'>
@@ -53,7 +53,7 @@
             <div class='props'>
               <img alt='Brotato' src='/app/assets/images/hat.svg'>
               <img alt='Brotato' src='/app/assets/images/mustache.svg'>
-              <img alt='Brotato' src='/app/assets/images/glasses.svg'>
+              <img alt='Brotato' src='/app/assets/images/tattoo.svg'>
               <img alt='Brotato' src='/app/assets/images/bow-tie.svg'>
             </div>
           </div>
@@ -70,7 +70,7 @@
             <h3>Nancy Yam</h3>
             <div class='props'>
               <img alt='Nancy Yam' src='/app/assets/images/hat.svg'>
-              <img alt='Nancy Yam' src='/app/assets/images/mustache.svg'>
+              <img alt='Nancy Yam' src='/app/assets/images/tattoo.svg'>
               <img alt='Nancy Yam' src='/app/assets/images/glasses.svg'>
               <img alt='Nancy Yam' src='/app/assets/images/bow-tie.svg'>
             </div>
@@ -78,7 +78,7 @@
           <div class='person-container'>
             <h3>Darth Tator</h3>
             <div class='props'>
-              <img alt='Darth Tator' src='/app/assets/images/hat.svg'>
+              <img alt='Darth Tator' src='/app/assets/images/tattoo.svg'>
               <img alt='Darth Tator' src='/app/assets/images/mustache.svg'>
               <img alt='Darth Tator' src='/app/assets/images/glasses.svg'>
               <img alt='Darth Tator' src='/app/assets/images/bow-tie.svg'>
@@ -90,7 +90,7 @@
               <img alt='Ted Tubor' src='/app/assets/images/hat.svg'>
               <img alt='Ted Tubor' src='/app/assets/images/mustache.svg'>
               <img alt='Ted Tubor' src='/app/assets/images/glasses.svg'>
-              <img alt='Ted Tubor' src='/app/assets/images/bow-tie.svg'>
+              <img alt='Ted Tubor' src='/app/assets/images/tattoo.svg'>
             </div>
           </div>
           <div class='person-container'>
@@ -98,14 +98,14 @@
             <div class='props'>
               <img alt='Spud Lighter' src='/app/assets/images/hat.svg'>
               <img alt='Spud Lighter' src='/app/assets/images/mustache.svg'>
-              <img alt='Spud Lighter' src='/app/assets/images/glasses.svg'>
+              <img alt='Spud Lighter' src='/app/assets/images/fork.svg'>
               <img alt='Spud Lighter' src='/app/assets/images/bow-tie.svg'>
             </div>
           </div>
           <div class='person-container'>
             <h3>Fran Fry</h3>
             <div class='props'>
-              <img alt='Fran Fry' src='/app/assets/images/hat.svg'>
+              <img alt='Fran Fry' src='/app/assets/images/fork.svg'>
               <img alt='Fran Fry' src='/app/assets/images/mustache.svg'>
               <img alt='Fran Fry' src='/app/assets/images/glasses.svg'>
               <img alt='Fran Fry' src='/app/assets/images/bow-tie.svg'>
@@ -117,20 +117,20 @@
               <img alt='Potato.' src='/app/assets/images/hat.svg'>
               <img alt='Potato.' src='/app/assets/images/mustache.svg'>
               <img alt='Potato.' src='/app/assets/images/glasses.svg'>
-              <img alt='Potato.' src='/app/assets/images/bow-tie.svg'>
+              <img alt='Potato.' src='/app/assets/images/fork.svg'>
             </div>
           </div>
         </div>
       </aside>
       <aside class='score'>
         <div class='try-container'>
-          <h3>Try 1</h3>
+          <h3 id='0'>Try 1</h3>
         </div>
         <div class='try-container'>
-          <h3>Try 2</h3>
+          <h3 id='1'>Try 2</h3>
         </div>
         <div class='try-container'>
-          <h3>Try 3</h3>
+          <h3 id='2'>Try 3</h3>
         </div>
       </aside>
       <main class='board'>
@@ -139,7 +139,18 @@
           <div id='close'>X</div>
           <h4>You have 3 tries to guess who's the secret potato. Pick an item bellow to help narrow your choices. Feel free to guess by clicking on a tater!</h4>
         </div>
+        <div id='choose-tater'>
+          <h4>You're out of guesses! So, who's the secret tater?</h4>
+        </div>
         <div class='potatoBoard'>
+          <div class='propFeatures'>
+            <img alt='glasses' class='glasses' src='/app/assets/images/glasses.svg'>
+            <img alt='hat' class='hat' src='/app/assets/images/hat.svg'>
+            <img alt='bow-tie' class='bow-tie' src='/app/assets/images/bow-tie.svg'>
+            <img alt='mustache' class='mustache' src='/app/assets/images/mustache.svg'>
+            <img alt='tattoo' class='tattoo' src='/app/assets/images/tattoo.svg'>
+            <img alt='fork' class='fork' src='/app/assets/images/fork.svg'>
+          </div>
           <div class='bodyFeatures'>
             <img alt='potato-eyes' class='eyes' src='/app/assets/images/eyes.svg'>
             <img alt='potato-nose' class='nose' src='/app/assets/images/big-nose.svg'>
@@ -149,27 +160,28 @@
       </main>
       <div class='props-container'>
         <div class='prop-container'>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/hat.svg'>
+          <div class='prop' id='hat'>
+            <img alt='' src='/app/assets/images/hat.svg'>
           </div>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/mustache.svg'>
+          <div class='prop' id='mustache'>
+            <img alt='' src='/app/assets/images/mustache.svg'>
           </div>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/bow-tie.svg'>
+          <div class='prop' id='bow-tie'>
+            <img alt='' src='/app/assets/images/bow-tie.svg'>
           </div>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/glasses.svg'>
+          <div class='prop' id='glasses'>
+            <img alt='' src='/app/assets/images/glasses.svg'>
           </div>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/tattoo.svg'>
+          <div class='prop' id='tattoo'>
+            <img alt='' src='/app/assets/images/tattoo.svg'>
           </div>
-          <div class='prop'>
-            <img alt='' class='drag' src='/app/assets/images/fork.svg'>
+          <div class='prop' id='fork'>
+            <img alt='' src='/app/assets/images/fork.svg'>
           </div>
         </div>
       </div>
     </div>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js' type='text/javascript'></script>
     <script src='/app/assets/javascripts/vendor.min.js'></script>
     <script src='/app/assets/javascripts/app.js'></script>
   </body>

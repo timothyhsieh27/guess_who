@@ -34,7 +34,16 @@
       }
     }
   }
-
+  
+  #choose-tater {
+    z-index: 5;
+    width: 50%;
+    margin: 0 auto;
+    border: 3px solid $blue;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+}
   .potatoBoard {
     border: #ddd solid 10px;
     border-radius: 50%;
