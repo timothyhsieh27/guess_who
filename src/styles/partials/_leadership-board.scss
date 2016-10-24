@@ -6,6 +6,12 @@
     width: 33%;
     float: left;
     padding: 20px;
+    @include media(tablet) {
+      width: 50%;
+    };
+    @include media(smallMobile) {
+      width: 100%;
+    };
 
     .person-info {
       width: 50%;
@@ -59,6 +65,13 @@
       background: none;
       text-align: right;
       color: #fff;
+      @include media(desktop) {
+        padding-top: 80px;
+      };
+      @include media(tablet) {
+        width: 100%;
+        text-align: center;
+      };
 
       h1 {
         float: none;
@@ -78,6 +91,15 @@
       padding-top: 25px;
       padding-right: 35px;
       color: #fff;
+      @include media(desktop) {
+        padding-top: 100px;
+      };
+      @include media(tablet) {
+        padding-top: 19px;
+        text-align: center;
+        width: 100%;
+        padding-right: 0;
+      };
 
       .placement {
         position: absolute;
@@ -87,6 +109,11 @@
         font-weight: 100;
         letter-spacing: -4px;
         color: #fff;
+        @include media(desktop) {
+          top: 3px;
+          text-align: center;
+          width: 85%;
+        };
       }
 
       .total {

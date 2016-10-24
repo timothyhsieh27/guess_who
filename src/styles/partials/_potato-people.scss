@@ -3,6 +3,12 @@
   width: 190px;
   float: left;
   padding-top: 20px;
+  @include media(desktop) {
+    float: none;
+    display: block;
+    width: 100%;
+    padding-top: 0;
+  };
 
   .person-container {
     width: 50%;
@@ -13,17 +19,34 @@
     border-right: #204471 solid 2px;
     border-bottom: #204471 solid 2px;
     text-align: center;
+    @include media(desktop) {
+      height: auto;
+      width: 20%;
+    };
+    @include media(mobile) {
+      padding: 7px;
+    };
 
-    &:nth-child(1) {
+    &:nth-child(1), &:nth-child(2) {
       border-top: #204471 solid 2px;
-    }
-
-    &:nth-child(2) {
-      border-top: #204471 solid 2px;
+      @include media(desktop) {
+        border-top: transparent;
+      };
     }
 
     h3 {
       font-size: 14px;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      @include media(desktop) {
+        font-size: 20px;
+        padding-bottom: 6px;
+        border-bottom: #eee solid 2px;
+      };
+      @include media(mobile) {
+        font-size: 16px;
+      };
     }
 
   .props {
@@ -32,6 +55,13 @@
       width: 50%;
       float: left;
       padding: 0 5px;
+      @include media(desktop) {
+        padding: 0 5px;
+      };
+      @include media(mobile) {
+        width: 44px;
+        float: none;
+      };
     }
   }
   }
