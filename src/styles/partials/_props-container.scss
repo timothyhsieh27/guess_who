@@ -5,11 +5,18 @@
   position: fixed;
   bottom: 0;
   background: #fff;
+  @include media(desktop) {
+    position: inherit;
+  };
 
   .prop {
     float: left;
     width: 16%;
     text-align: center;
+    @include media(tablet) {
+      width: 33%;
+      padding-bottom: 15px;
+    };
 
     &:hover {
       img {

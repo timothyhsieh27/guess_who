@@ -6,16 +6,37 @@
   margin-top: 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  @include media(desktop) {
+    float: none;
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    text-align: center;
+    height: auto;
+  };
 
   .try-container {
     text-align: center;
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 50px 0;
-    background: #ddd;
+    background: #497DBD;
+    color: #fff;
     border-radius: 50%;
     width: 135px;
     margin: 0 auto;
     margin-top: 15px;
+    @include media(desktop) {
+      font-size: 28px;
+      padding: 25px 10px;
+      width: auto;
+      display: inline-block;
+      margin: 20px 40px 20px 0;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    };
   }
 }
