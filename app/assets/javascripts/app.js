@@ -1,25 +1,26 @@
 (function($) {
   //On pageload instructions pop up
   $(function(){
-    $('#game-instructions').hide().fadeIn(2500);
+    $('#game-instructions').fadeIn(2500);
     $('#flying-pot').hide();
     $('#choose-tater').hide();
   });
 
   //make them go away
   $('#close').click(function(){
-    $('#game-instructions').fadeOut().hide(2000);
+    $('#game-instructions').fadeOut(2000);
   });
 
   //Login/Signup listeners
   $('#login').click(function(event) {
       event.preventDefault();
-      // new User(loginValues());
+      location.href = "game.html";
       loginValues();
   });
 
   $('#signup').click(function(event) {
       event.preventDefault();
+      location.href = "game.html";
       signUpValues();
   });
   //object to pass into ajax
@@ -171,7 +172,7 @@ function PotatoGame(context) {
         checkTaters("Fork","fork");
       }
     });
-
+   // Checks taters for features
     function checkTaters(Feature, feature) {
      Feature = "/app/assets/images/" + feature + ".svg";
      $(".person-container img").each(function() {
@@ -204,23 +205,7 @@ function tryCounter() {
 
 }
 
-/***************************************
-  div loops
-***************************************/
-function CheckTaters(feature){
-var hat = "/app/assets/images/hat",
-    mustache = "/app/assets/images/mustache",
-    glasses = "/app/assets/images/glasses",
-    fork = "/app/assets/images/fork",
-    tattoo = "/app/assets/images/tattoo",
-    bowTie = "/app/assets/images/bow-tie";
 
-$(".props").each(function(){
-    if($(this).attr("src") !== feature ){
-      alert($(this).attr("alt"));
-    }
-})
-}
   /**************************************
   Click to Pages
   **************************************/
@@ -245,7 +230,9 @@ $(".props").each(function(){
   new PotatoGame();
 
 })(jQuery);
-
+/*********************************
+  Unused requests Back-end said I needed them, did not.
+*********************************/
 function checkUsername(newContext) {
   $.ajax({
     "method": "GET",
