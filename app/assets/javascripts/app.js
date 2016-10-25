@@ -231,7 +231,7 @@ function tryCounter() {
 
 })(jQuery);
 /*********************************
-  Unused requests Back-end said I needed them, did not.
+  Unused Requests
 *********************************/
 function checkUsername(newContext) {
   $.ajax({
