@@ -109,6 +109,7 @@
 ****************************************/
 function PotatoGame(context) {
      this.info = {
+      name: "Baked Ben",
       hat: true, //change to context.hat
       mustache: false, //change to context.mustache
       bowTie: false, //you get the idea...
@@ -183,6 +184,14 @@ function PotatoGame(context) {
 
    }
 
+   $('.person-container').on('click' function(event) {
+     if ($(this).children('img').attr('alt') == self.info.name) {
+       alert("yay");
+     } else {
+       alert("nay");
+     }
+   })
+
 
 }
 
@@ -192,12 +201,10 @@ function tryCounter() {
   if (tries === 0) {
     $('#0').css( "color", "red");
     tries += 1;
-  }
-   else if(tries === 1) {
+  } else if(tries === 1) {
     $('#1').css( "color", "red");
     tries += 1;
-  }
-  else if (tries === 2) {
+  } else if (tries === 2) {
     $('#2').css( "color", "red");
     tries += 1;
     $('#choose-tater').fadeIn(1000).fadeOut(3000);
@@ -233,6 +240,51 @@ function tryCounter() {
 /*********************************
   Unused Requests
 *********************************/
+
+//GETs user database and iterates over it
+function checkExisting(context) {
+    $.ajax({
+        "method": "GET",
+        "url": '/login/users' + context,
+        "data": {},
+        "datatype": "json",
+        "success": function(data) {
+            for (var index = 0; index.length; index++) {
+                if (data.username == context.username)
+                    if (data.password == context.password) {
+                        window.location.replace("/game");
+                    } else {
+                        window.location.replace("/login");
+                    }
+            }
+        }
+    });
+}
+//Random constructor, Make use of me
+function UserData(userObj) {
+    this.info = {
+        username: userObj.username,
+        password: userObj.password,
+        totalpoints: userObj.total_points,
+
+    };
+}
+
+
+function signUpValues() {
+    var newContext = {
+        username: $('#username').val(),
+        password: $('#password').val(),
+        confirm: $('#confirm').val()
+    };
+    if (newContext.password === newContext.confirm) {
+        checkUsername(newContext);
+    } else {
+        alert("Passwords do not match");
+    }
+
+}
+
 function checkUsername(newContext) {
   $.ajax({
     "method": "GET",
@@ -275,6 +327,8 @@ function update() {
         }
   });
 }
+
+
 //Flying Tater. Why? Not sure...
 var tater = function(tater,speed){
     tater.animate({
